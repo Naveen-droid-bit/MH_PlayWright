@@ -1,0 +1,15 @@
+config:
+  # target: https://machinehack.com/
+  target: http://192.168.0.232:3000/
+  phases:
+    - duration: 10       # Duration of this phase in seconds
+      arrivalRate: 5     # Number of new virtual users per second
+      rampTo: 2          # Ramp up to 20 users per second over the duration
+  engines:
+    playwright: {}
+      # launchOptions:
+      #   headless: true
+  processor: "./tests/aiPractice.js"
+scenarios:
+  - engine: playwright
+    testFunction: "aiPractice"

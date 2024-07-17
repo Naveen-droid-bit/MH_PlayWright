@@ -1,0 +1,18 @@
+config:
+  # target: https://machinehack.com/
+  target: https://development.machinehack.com/
+  # phases:
+  #   - duration: 60        # Duration of this phase in seconds
+  #     arrivalRate: 10     # Number of new virtual users per second
+  #     rampTo: 20          # Ramp up to 20 users per second over the duration
+  #   - duration: 120
+  #     arrivalRate: 20
+  #     rampTo: 30
+  engines:
+    playwright:
+      launchOptions:
+        headless: true
+  processor: "./tests/testcase1_artilleryCmd.js"
+scenarios:
+  - engine: playwright
+    testFunction: "artilleryScript"
